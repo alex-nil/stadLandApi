@@ -6,6 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var stadRouter = require('./routes/stad');
 var landRouter = require('./routes/land');
+var nystadRouter = require('./routes/nystad');
+var nylandRouter = require('./routes/nyland');
 
 var app = express();
 
@@ -18,5 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/stad', stadRouter);
 app.use('/land', landRouter);
+app.use('/nystad', nystadRouter);
+app.use('/nyland', nylandRouter);
+
 
 module.exports = app;
