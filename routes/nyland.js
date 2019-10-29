@@ -24,8 +24,8 @@ router.get('/', function(req, res, next)  {
         var land = JSON.parse(data);
         var newNum = land.length;
             newLand = {
-                "Id": newNum + 1,
-                "Countryname": req.body.name
+                "id": newNum + 1,
+                "countryname": req.body.name
             }
         land.push(newLand);
         var savedLand = JSON.stringify(land, null, 2);
