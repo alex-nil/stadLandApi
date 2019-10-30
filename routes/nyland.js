@@ -5,7 +5,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true});
 var router = express.Router();
 /* GET users listing. */
 
-router.get('/', function(req, res, next)  {
+router.get('/newsave', function(req, res, next)  {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var html = '';
@@ -17,7 +17,8 @@ router.get('/', function(req, res, next)  {
     html += "<body>";
     res.send(html);
   });
-  router.post('/', urlencodedParser, function(req, res) {
+  
+  router.post('/', urlencodedParser, function(req, res,next) {
     fs.readFile('./land.json', (err, data) => {
         if (err) throw err;
         
